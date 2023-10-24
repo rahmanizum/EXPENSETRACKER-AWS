@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body class="text-bg-success bg-opacity-25">
+    <!-- Nav bar -->
+    <nav class="nav navbar navbar-expand-lg text-bg-success col-12">
+        <div class="container text-black p-1 ">
+            <div class="d-flex align-items-center d-none" id="normallogo">
+                <a class="navbar-brand " href="#"><img src="/images/logo.jpg" alt="brand-image"
+                        class=" img-fluid rounded-circle" width="50px" height="50px"></a>
+                <h2><span class="text-danger">Expense</span> Tracker</h2>
+            </div>
+            <div class="d-flex align-items-center d-none" id="premiumlogo">
+                <a class="navbar-brand " href="#"><img src="/images/prmlogo.jpg" alt="brand-image"
+                        class="img-fluid rounded-circle" width="60px" height="60px"></a>
+                <h2> <span class="text-danger fst-italic">Premium</span> ETracker</h2>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link fs-4" data-bs-toggle="collapse" data-bs-target="#profilediv"
+                            aria-expanded="true" aria-controls="profilediv">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link fs-4">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link fs-4">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/home" class="nav-link fs-4" id="logoutbtn">Log Out</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <!--Main contents-->
+    <div class="container-fluid mt-3">
+        <div class="row d-flex justify-content-center">
+            <!--Profile-->
+            <div class="col-md-6 col-xxl-3 mb-3 mb-xxl-0 collapse show" id="profilediv">
+                <div class="card bg-success bg-opacity-50">
+                    <div class="card-header text-center">
+                        <img src="http://randomuser.me/api/portraits/men/11.jpg" class="rounded-circle mb-3" alt="">
+                        <h2 id="namePlaceholder" class="fw-bold">Jacob</h2>
+                        <h5 id="emailPlaceholder">jacob@gmail.com</h5>
+                        <h6 class="text-danger-emphasis lh-1" id="usercategory">Basic user</h6>
+
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <div class="list-group" id="list-tab" role="tablist">
+                                <a class="list-group-item list-group-item-action active" id="list-leaderboard-list"
+                                    data-bs-toggle="list" href="#list-leaderboard" role="tab"
+                                    aria-controls="list-leaderboard"><i
+                                        class="fas fa-tachometer-alt me-2 text-black"></i>Leaderboard</a>
+                                <a class="list-group-item list-group-item-action" id="list-downloadhistory-list"
+                                    data-bs-toggle="list" href="#list-downloadhistory" role="tab"
+                                    aria-controls="list-downloadhistory"><i
+                                        class="fas fa-list me-2 text-black"></i>Download
+                                    Expenses</a>
+                                <a class="list-group-item list-group-item-action" id="list-messages-list"
+                                    data-bs-toggle="list" href="#list-messages" role="tab"
+                                    aria-controls="list-messages"><i class="fas fa-coins me-2 text-black"></i>
+                                    Income</a>
+                                <a class="list-group-item list-group-item-action" id="list-settings-list"
+                                    data-bs-toggle="list" href="#list-settings" role="tab"
+                                    aria-controls="list-settings"><i class="fas fa-money-bill-wave me-2 text-black"></i>
+                                    Expenses</a>
+                            </div>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <!--Premium Content-->
+            <div class="col-md-6 col-xxl-3 d-none mb-3 mb-xxl-0" id="premiumdiv">
+                <div class="tab-content" id="nav-tabContent">
+                    <!-- LeaderBoard-->
+                    <div class="tab-pane fade show active " id="list-leaderboard" role="tabpanel"
+                        aria-labelledby="list-leaderboard-list">
+                        <div class="card bg-success bg-opacity-75" id="leaderboard">
+                            <div class="card-header p-2">
+                                <h3 class="text-center text-white">LeaderBoard</h3>
+                            </div>
+                            <div class="card-body " style="overflow-y: auto; max-height: 400px;">
+                                <ul class="list-group" id="lbplaceholder">
+                                    <!-- <li class="list-group-item">1. John Doe - Expense: $500.00</li>
+                                    <li class="list-group-item">2. Jane Smith - Expense: $300.00</li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Download Expenses-->
+                    <div class="tab-pane fade " id="list-downloadhistory" role="tabpanel"
+                        aria-labelledby="list-downloadhistory-list">
+                        <div class="card bg-success bg-opacity-75" id="leaderboard">
+                            <div class="card-header d-flex justify-content-between fw-bold p-2 ">
+                                <button class="btn form-control  btn-outline-warning" id="completedownloadbtn">Download Expenses
+                                </button>
+                            </div>
+                            <div class="card-body" style="overflow-y: auto; max-height: 400px;">
+                                    <h5 class="text-center">Complete Download History</h5>
+                                    <ul class="list-group" id="historyplaceholder">
+                                        <a class="list-group-item list-group-item-action"
+                                            href="">Nothing downloaded yet</a>
+                                        <!-- <a class="list-group-item list-group-item-action"
+                                            href="">21/10/1996</a>
+                                        <a class="list-group-item" href="">21/10/1996</a> -->
+                                    </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                        ...income...
+                    </div>
+                    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                        ...settings...</div>
+                </div>
+            </div>
+            <!--advertisement-->
+            <div class="col-md-6 col-xxl-3 d-none mb-3 mb-xxl-0" id="normaldiv">
+                <div class="card text-bg-dark bg-opacity-75">
+                    <div class="card-header">
+                        <h4 class="text-center">Premium Features</h4>
+                    </div>
+                    <div class="card-body ">
+                        <ul class="list-group list-group">
+                            <li class="list-group-item">1. LeaderBoard</li>
+                            <li class="list-group-item">2. Expense Filter</li>
+                            <li class="list-group-item">3. Expense Reminders and Alerts</li>
+                            <li class="list-group-item">4. Early Access to New Features</li>
+                            <li class="list-group-item">5. Monthly/Yearly Reports</li>
+                            <li class="list-group-item">6. Priority Customer Support</li>
+                            <li class="list-group-item">6.Personalized Financial Advice</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-black text-center">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#paymentconfirmation"
+                            aria-controls="paymentconfirmation">
+                            <button class="btn btn-outline-warning rounded-4 fs-5" id="buypremiumbtn">Buy
+                                Premium</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--Expense form-->
+            <div class="col-md-10 col-xxl-6 mb-3 mb-xxl-0" id="expenseformdiv">
+                <div class="card bg-black text-white">
+                    <div class="card-header text-center">
+                        <h3>Add Your Expenses</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="" id="myForm">
+                            <div class="form-group mb-3">
+                                <label for="category">Category</label>
+                                <select class="form-control" id="category" name="category" required>
+                                    <option disabled selected value="">Select an Item</option>
+                                    <option value="Groceries">Groceries</option>
+                                    <option value="Utilities">Utilities</option>
+                                    <option value="Rent">Rent</option>
+                                    <option value="Fuel">Fuel</option>
+                                    <option value="Clothes">Clothes</option>
+                                    <option value="Drinks">Drinks</option>
+                                    <option value="Food">Food</option>
+                                    <option value="Education">Education</option>
+                                    <option value="Gifts">Gifts</option>
+                                </select>
+
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="paymentmethod">Payment Method</label>
+                                <select class="form-control" id="pmethod" name="pmethod" required>
+                                    <option disabled selected value="">Select a payment method</option>
+                                    <option value="Bank">Bank</option>
+                                    <option value="Card">Card</option>
+                                    <option value="Cash">Cash</option>
+                                    <option value="UPI">UPI</option>
+                                    <option value="Others">Others</option>
+                                </select>
+
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="amount">Amount</label>
+                                <input type="text" class="form-control" placeholder="Enter Amount" id="amount"
+                                    name="amount" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="date">Date</label>
+                                <input type="date" class="form-control" id="date" name="date" required>
+                            </div>
+                            <div class="form-group mt-4 pb-xxl-2">
+                                <button type="submit" class="btn btn-primary form-control submit" id="submitbtn">Add
+                                    Expense</button>
+                            </div>
+                            <div class="alert alert-success alert-dismissible fade show mt-3 text-center d-none"
+                                role="alert" id="successDiv">
+                                <span class="lead fst-italic">Successfully added your exepense.</span>
+                            </div>
+                            <div class="alert alert-warning alert-dismissible fade show mt-3 text-center d-none"
+                                role="alert" id="updateDiv">
+                                <span class="lead fst-italic">Successfully updated your exepense.</span>
+                            </div>
+                            <input type="hidden" id="editid" value="">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--Table-->
+            <div class="container table-responsive text-bg-primary bg-opacity-25 mb-5 mt-4 border border-3 ">
+                <!--TABLE 1-->
+                <table class="table table-info" id="htable">
+                    <div class="d-flex ">
+                        <h3 class="text-center fst-italic pt-3 text-black text-nowrap ms-md-5">
+                            Expense Table
+                        </h3>
+                        <h3 class="text-center fst-italic pt-3 text-black text-nowrap ms-sm-5"><span
+                                class="lead ms-5 fs-3">Last
+                                updated
+                                on </span>
+                            <span class="lead ms-sm-0 text-nowrap" id="lupdatePlaceholder">YYYY-MM-DD</span>
+                        </h3>
+                    </div>
+
+                    <!--TABLE HEAD STARTS HERE-->
+                    <thead class="thead-dark table-danger">
+                        <tr class="nowrap">
+                            <th>#</th>
+                            <th>Category</th>
+                            <th>Payment</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <!--TABLE BODY STARTS HERE-->
+                    <tbody class="nowrap" id="expensePlaceholder">
+                        <!-- <tr>
+                            <td>1</td>
+                            <td>Groceries</td>
+                            <td>Cash</td>
+                            <td > &#8377;</td>
+                            <td class="text-nowrap">12/15/23</td>
+                            <td>
+                                <button class="btn btn-outline-success editbtn">
+                                    Edit
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-outline-danger delbtn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                    </tbody>
+                    <!--TABLE FOOT STARTS HERE -->
+                    <tfoot class="table-primary" id="htfoot">
+                        <tr>
+                            <td colspan="3">Total Expense</td>
+                            <td id="totalPlaceholder">&#8377;</td>
+                            <td colspan="3"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Model -->
+    <div class="modal fade " id="paymentconfirmation">
+        <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-content">
+                <div class="modal-body text-bg-success bg-opacity-25 text-black">
+                    <div class="alert alert-dismissible fade show mt-1 text-center ms-4" role="alert">
+                        <div class="mb-3" id="confirmationdiv">
+                            <strong></strong>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-warning" id="rzp-button1">Proceed to payment</button>
+                            <button type="button" class="btn btn-outline-danger ms-5 me-5" data-bs-toggle="modal"
+                                data-bs-target="#paymentconfirmation" id="cancelbtn">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pagination justify-content-center">
+                    <div class="input-group d-none d-md-block">
+                        <button class="btn btn-secondary" >No of rows required in a page</button>
+                        <select class="form-select-sm" id="noiteminpage">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-secondary" id="prevPage">Previous</button>
+                        <button class="btn btn-secondary" id="currentPage">1</button>
+                        <button class="btn btn-secondary" id="nextPage">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" p-5"></div>
+    <footer class="bg-warning py-4 fixed-bottom text-black">
+        <!-- Footer Content Here -->
+        <div class="container text-center">
+            <p>&copy; 2023 Mufil PvtLtd. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/premiumfeatures.js"></script>
+
+</html>
