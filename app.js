@@ -4,7 +4,7 @@ const cors = require('cors');
 require('dotenv').config();
 const fs = require('fs');
 const sequelize = require('./util/database');
-
+console.log("Automated with jenkins");
 
 const PORT = process.env.PORT;
 
