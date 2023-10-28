@@ -2,9 +2,11 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
+<<<<<<< HEAD
 const fs = require('fs');
+=======
+>>>>>>> f74688afdf5b5c77429449a2051e23ca8da70100
 const sequelize = require('./util/database');
-
 
 const PORT = process.env.PORT;
 
