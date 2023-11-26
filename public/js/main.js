@@ -62,9 +62,11 @@ function showOutput(response) {
         <td> &#8377; ${ele.amount}</td>
         <td class="text-nowrap">${ele.date}</td>
         <td>
+        <a href="#expenseformdiv">
             <button class="btn btn-outline-success editbtn" id="${ele.id}">
                 Edit
             </button>
+        </a>
         </td>
         <td>
             <button class="btn btn-outline-danger delbtn" id="${ele.id}">
@@ -228,6 +230,7 @@ async function addExpense(e) {
                 setTimeout(() => {
                     elements.updateDiv.classList.remove('d-block');
                     elements.updateDiv.classList.add('d-none');
+                    elements.submitbtn.innerHTML = "Add Expense";
                     clearFields();
                     refresh();
                     premium();
@@ -253,7 +256,6 @@ async function deleteExpense(e) {
 }
 async function editExpense(e) {
     try {
-        e.preventDefault();
         const eID = e.target.id;
         const response = await authenticatedAxios.get(`expenses/getexpensebyid/${eID}`)
         const { category, pmethod, amount, date } = response.data[0];
@@ -262,6 +264,7 @@ async function editExpense(e) {
         elements.Uamount.value = amount;
         elements.Udate.value = date;
         elements.Ueditid.value = eID;
+        elements.submitbtn.innerHTML = "Update Expense";
     } catch (error) {
         console.log(error);
         refresh();
