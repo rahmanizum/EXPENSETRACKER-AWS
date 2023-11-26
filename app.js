@@ -1,4 +1,4 @@
-
+//Starting of app.js file
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
