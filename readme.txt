@@ -1,0 +1,21 @@
+FIND SAMPLE FORMAT OF ENV FILE HERE 
+
+
+SECRET_KEY='yourSecretKey'
+RAZORPAY_KEY_ID='rzMbdc7cb'
+RAZORPAY_KEY_SECRET='Hve4iEdAG'
+PORT='3000'
+SIB_API_KEY = 'xkeysib-3120a982f6e8228480c9b8935-qZs4tkkUmiYiXorO'
+
+AWS_ACCESS_KEY_ID='AKIAWFDWK4NRXT3EY'
+AWS_SECRET_ACCESS_KEY='boxrE1kNzJUFgdVngRD1EYajWDK+BIwGB6o7'
+BUCKET_NAME = 'expensetracker-mufil'
+
+
+# WEBSITE = http://15.207.106.126:3000
+# DATABASE_NAME='expensetracker'
+# DATABASE_USERNAME='mufilrahman'
+# DATABASE_PASSWORD='T#975ph'
+# DATABASE_DIALECT='mysql'
+# DATABASE_HOST='database-1.cwy4j.ap-south-1.rds.amazonaws.com'
+
